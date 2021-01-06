@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h5 style="text-align: center;">Users</h5>
+
+<ul style="margin: 20px;" id="myUL">
+
+    {% for user in users %}
+
+    <li><span class="caret">{{user.name}}</span>
+        <ul class="nested">
+            <li> <a onclick="return changeSrc(this)" href="info/{{ user.id }}">Info</a></li>
+
+            <li> <a onclick="return changeSrc(this)" href="posts/{{ user.id }}">Posts</a></li>
+
+            <li> <a onclick="return changeSrc(this)" href="photos/{{ user.id }}">Photos</a></li>
+        </ul>
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}

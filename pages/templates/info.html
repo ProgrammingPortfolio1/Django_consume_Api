@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body style="background-color: rgb(229, 239, 241);">
+
+    <div class="container-fluid">
+
+        <div id="myhome" style="text-align: right; display: none;">
+
+            <a href="http://127.0.0.1:8000/">HOME PAGE</a>
+        </div>
+
+        <h5 style="text-align: center;">{{ user.name }} info</h5>
+
+        <p><span style="background-color: rgb(228, 220, 235);">Name:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.name }}</span></p>
+
+        <p><span style="background-color: rgb(228, 220, 235);">Email:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.email }}</span></p>
+
+        <p><span style="background-color: rgb(228, 220, 235);">City:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.address.city }}</span></p>
+
+        <p><span style="background-color: rgb(228, 220, 235);">Phone:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.phone }}</span></p>
+
+        <p><span style="background-color: rgb(228, 220, 235);">Website:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.website }}</span></p>
+
+        <p><span style="background-color: rgb(228, 220, 235);">Company:</span>&emsp; <span
+                style="background-color: rgb(236, 204, 210);">
+                {{ user.company.name }}</span></p>
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Check if page is loaded inside a frame -->
+    <script>
+        $(document).ready(function () {
+
+            var currurl = window.frameElement;
+
+            if (!currurl) {
+
+                document.getElementById('myhome').style.display = 'block';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
